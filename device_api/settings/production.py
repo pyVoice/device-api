@@ -45,8 +45,6 @@ REST_FRAMEWORK = {
     )
 }
 
-STATIC_URL = '/static/'
-
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
