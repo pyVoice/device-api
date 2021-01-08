@@ -26,7 +26,7 @@ DATABASES = {
     }
 }
 
-MongoClient.HOST = "mongodb+srv://{0}:{1}@cluster-prod.omvsu.mongodb.net/"
+MongoClient.HOST = "mongodb+srv://{0}:{1}@cluster-prod.omvsu.mongodb.net/".format(env('MONGODB_DB_USERNAME'), env('MONGODB_DB_PASSWORD'))
 
 AUTH_PASSWORD_VALIDATORS = [
     {
