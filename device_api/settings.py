@@ -177,8 +177,7 @@ if not DEBUG:
 
 # CORS
 
-if DEBUG:
-    CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # API Key
