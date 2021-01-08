@@ -1,1 +1,1 @@
-web: gunicorn forms.wsgi --preload --log-file -
+web: gunicorn device_api.wsgi --preload --log-file -
