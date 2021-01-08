@@ -1,0 +1,188 @@
+openapi: 3.0.2
+info:
+  title: pyVoice API
+  version: ''
+paths:
+  /devices/:
+    get:
+      operationId: listDevices
+      description: API endpoints for Deviced related operations
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Device'
+          description: ''
+      tags:
+      - devices
+    post:
+      operationId: createDevice
+      description: API endpoints for Deviced related operations
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Device'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Device'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Device'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      tags:
+      - devices
+  /devices/{id}/:
+    get:
+      operationId: retrieveDevice
+      description: API endpoints for Deviced related operations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this device.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      tags:
+      - devices
+    put:
+      operationId: updateDevice
+      description: API endpoints for Deviced related operations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this device.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Device'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Device'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Device'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      tags:
+      - devices
+    patch:
+      operationId: partialUpdateDevice
+      description: API endpoints for Deviced related operations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this device.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Device'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Device'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Device'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      tags:
+      - devices
+    delete:
+      operationId: destroyDevice
+      description: API endpoints for Deviced related operations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this device.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - devices
+components:
+  schemas:
+    Device:
+      type: object
+      properties:
+        device_id:
+          type: string
+          maxLength: 25
+        version:
+          type: string
+          maxLength: 10
+        operating_system:
+          type: string
+          maxLength: 50
+        location:
+          type: string
+          maxLength: 100
+        registered_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - device_id
+      - version
+      - operating_system
+      - location
