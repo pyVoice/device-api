@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     # External packages
     'rest_framework',
     'rest_framework_api_key',
-    'corsheaders',
 
     # Custom apps
     'api',
