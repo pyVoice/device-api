@@ -14,20 +14,13 @@ SECRET_KEY = env('SECRET_KEY')
 ALLOWED_HOSTS = []
 
 DATABASES = {
-	# 'default': {
-	# 	'ENGINE': 'djongo',
- #        'NAME': 'pyvoice-device-api',
- #        'CLIENT': {
- #            'host': '127.0.0.1',
- #        }
-	# },
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'pyvoice-device-dev',
+	'default': {
+		'ENGINE': 'djongo',
+        'NAME': 'pyvoice-device-api',
         'CLIENT': {
-            'host': '***REMOVED***',
+            'host': '127.0.0.1',
         }
-    }
+	},
 }
 
 AUTH_PASSWORD_VALIDATORS = [
