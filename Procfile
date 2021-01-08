@@ -1,1 +1,1 @@
-web:
+web: gunicorn forms.wsgi --preload --log-file -
