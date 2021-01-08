@@ -33,7 +33,7 @@ DEBUG = os.getenv('DJANGO_DEBUG', 1)
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
+    ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(' ')
 
 # Application definition
 
