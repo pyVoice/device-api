@@ -11,27 +11,24 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dotenv
 
 # load env variables
-# dotenv.read_dotenv()
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 1)
+DEBUG = os.getenv('DEBUG')
+
 
 if DEBUG:
+    SECRET_KEY = os.getenv('SECRET_KEY')
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 # Application definition
 
@@ -99,12 +96,12 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'djongo',
-            'NAME': os.getenv('MONGODB_DB_NAME'),
+            'NAME': os.environ.get('MONGODB_DB_NAME'),
             'CLIENT': {
-                'host': os.getenv('MONGODB_DB_HOST'),
-                'port': os.getenv('MONGODB_DB_PORT'),
-                'username': os.getenv('MONGODB_DB_USERNAME'),
-                'password': os.getenv('MONGODB_DB_PASSWORD'),
+                'host': os.environ.get('MONGODB_DB_HOST'),
+                'port': os.environ.get('MONGODB_DB_PORT'),
+                'username': os.environ.get('MONGODB_DB_USERNAME'),
+                'password': os.environ.get('MONGODB_DB_PASSWORD'),
             }
         }
     }
