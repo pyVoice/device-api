@@ -45,12 +45,15 @@ REST_FRAMEWORK = {
     )
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static')
-)
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+AZURE_ACCOUNT_NAME = env('AZ_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = env('AZ_ACCOUNT_KEY')
+AZURE_CONTAINER = env('AZ_CONTAINER')
+AZURE_CUSTOM_DOMAIN = env('AZ_CUSTOM_DOMAIN')
 
 MIDDLEWARE_CLASSES = (
     'whitenoise.middleware.WhiteNoiseMiddleware',
