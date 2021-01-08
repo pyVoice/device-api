@@ -1,25 +1,33 @@
 from .base import *
 import environ
 
-
-environ.Env.read_env(
-	ALLOWED_HOSTS=(list, []),
+env = environ.Env(
+    DEBUG=(bool, True),
 )
 
-DEBUG = True
+environ.Env.read_env()
+
+DEBUG = env('DEBUG')
 
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+ALLOWED_HOSTS = []
 
 DATABASES = {
-	'default': {
-		'ENGINE': 'djongo',
-        'NAME': 'pyvoice-device-api',
+	# 'default': {
+	# 	'ENGINE': 'djongo',
+ #        'NAME': 'pyvoice-device-api',
+ #        'CLIENT': {
+ #            'host': '127.0.0.1',
+ #        }
+	# },
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'pyvoice-device-dev',
         'CLIENT': {
-            'host': '127.0.0.1',
+            'host': 'mongodb+srv://heroku:UGa428PmV9vTSDdX@cluster-prod.omvsu.mongodb.net/device-api-devssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true',
         }
-	}
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
