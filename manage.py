@@ -3,11 +3,11 @@
 import os
 import sys
 
-# import dotenv
+import dotenv
 
 
 def main():
-    # dotenv.read_dotenv()
+    dotenv.read_dotenv()
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'device_api.settings')
     try:
