@@ -20,6 +20,16 @@ class Device(models.Model):
     	verbose_name='Location',
     	help_text='The location of the device (city/country)')
 
+    @property
+    def times(self):
+        times_dict = {
+            'full': self.registered_at,
+            'timestamp': self.registered_at.timestamp(),
+            'date': self.registered_at.strftime('%Y-%m-%d'),
+            'time': self.registered_at.strftime('%H:%M:%S'),
+        }
+        return times_dict
+
     class Meta:
         verbose_name = 'Device'
         verbose_name_plural = 'Devices'
