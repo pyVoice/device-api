@@ -32,4 +32,5 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'PAGE_SIZE': 200,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    #'DATETIME_FORMAT': '%s000',
 }
