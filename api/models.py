@@ -22,12 +22,16 @@ class Device(models.Model):
 
     @property
     def times(self):
+        # fix for Grafana charts
+        timestamp = str(self.registered_at.timestamp()).split('.', 1)[0]
+
         times_dict = {
             'full': self.registered_at,
-            'timestamp': self.registered_at.timestamp(),
+            'timestamp': timestamp,
             'date': self.registered_at.strftime('%Y-%m-%d'),
             'time': self.registered_at.strftime('%H:%M:%S'),
         }
+        
         return times_dict
 
     class Meta:
