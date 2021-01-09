@@ -14,7 +14,7 @@ class DeviceSerializer(serializers.ModelSerializer):
     #     else:
     # 	    raise serializers.ValidationError('Device with that ID already exists.')
 
-    def to_representation(self, instance):
-    	representation = super(DeviceSerializer, self).to_representation(instance)
-    	representation['registered_at'] = instance.registered_at.strftime('%Y-%m-%d %H:%M:%S')
-    	return representation
+    # def to_representation(self, instance):
+    # 	representation = super(DeviceSerializer, self).to_representation(instance)
+    # 	representation['registered_at'] = instance.registered_at.strftime('%Y-%m-%d %H:%M:%S')
+    # 	return representation
