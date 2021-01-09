@@ -27,11 +27,11 @@ class Device(models.Model):
 
         times_dict = {
             'full': self.registered_at,
-            'timestamp': timestamp,
+            'timestamp': int(timestamp),
             'date': self.registered_at.strftime('%Y-%m-%d'),
             'time': self.registered_at.strftime('%H:%M:%S'),
         }
-        
+
         return times_dict
 
     class Meta:
