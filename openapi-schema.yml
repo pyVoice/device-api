@@ -1,9 +1,10 @@
 openapi: 3.0.2
 info:
-  title: pyVoice API
+  title: pyVoice Device API
   version: ''
+  description: Device API for pyVoice
 paths:
-  /devices/:
+  https://device-api.pyvoice.tech/devices/:
     get:
       operationId: listDevices
       description: API endpoints for Deviced related operations
@@ -65,7 +66,7 @@ paths:
           description: ''
       tags:
       - devices
-  /devices/{id}/:
+  https://device-api.pyvoice.tech/devices/{id}/:
     get:
       operationId: retrieveDevice
       description: API endpoints for Deviced related operations
@@ -73,7 +74,7 @@ paths:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this device.
+        description: A unique integer value identifying this Device.
         schema:
           type: string
       responses:
@@ -92,7 +93,7 @@ paths:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this device.
+        description: A unique integer value identifying this Device.
         schema:
           type: string
       requestBody:
@@ -122,7 +123,7 @@ paths:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this device.
+        description: A unique integer value identifying this Device.
         schema:
           type: string
       requestBody:
@@ -152,7 +153,7 @@ paths:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this device.
+        description: A unique integer value identifying this Device.
         schema:
           type: string
       responses:
@@ -167,19 +168,22 @@ components:
       properties:
         device_id:
           type: string
-          maxLength: 25
+          description: A unique ID to identify each device
+          maxLength: 40
         version:
           type: string
+          description: The pyVoice version installed
           maxLength: 10
         operating_system:
           type: string
+          description: The operating system name, edition and architecture
           maxLength: 50
         location:
           type: string
+          description: The location of the device (city/country)
           maxLength: 100
-        registered_at:
+        times:
           type: string
-          format: date-time
           readOnly: true
       required:
       - device_id
