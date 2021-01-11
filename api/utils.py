@@ -9,7 +9,8 @@ def download_csv(self, request, queryset):
     writer.writerow(
         ['id', 'device_id', 'version', 'location', 'operating_system'])
     for s in queryset:
-        writer.writerow([s.id, s.device_id, s.version, s.location, s.operating_system])
+        writer.writerow([s.id, s.device_id, s.version,
+                         s.location, s.operating_system])
 
     f.seek(0)
     response = HttpResponse(f, content_type='text/csv')

@@ -6,15 +6,16 @@ from .models import Device
 class DeviceAdmin(admin.ModelAdmin):
     actions = ['download_csv']
 
-    readonly_fields = ('id', 'device_id', 'registered_at', 'version', 'location', 'operating_system')
+    readonly_fields = ('id', 'device_id', 'registered_at',
+                       'version', 'location', 'operating_system')
     list_display = ('device_id', 'version', 'location', 'registered_at',)
     list_filter = ('version', 'location', 'operating_system')
 
     def has_add_permission(self, request):
-    	return False
+        return False
 
     def has_change_permission(self, request, obj=None):
-    	return False
+        return False
 
     from .utils import download_csv
 

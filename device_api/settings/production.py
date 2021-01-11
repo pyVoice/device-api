@@ -2,8 +2,7 @@ from .base import *
 import environ
 
 env = environ.Env(
-	ALLOWED_HOSTS=(list, []),
-    MONGODB_DB_PORT=(int, 27017),
+    ALLOWED_HOSTS=(list, []),
 )
 
 DEBUG = env('DEBUG')

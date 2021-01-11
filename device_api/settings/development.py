@@ -14,13 +14,13 @@ SECRET_KEY = env('SECRET_KEY')
 ALLOWED_HOSTS = []
 
 DATABASES = {
-	'default': {
-		'ENGINE': 'djongo',
+    'default': {
+        'ENGINE': 'djongo',
         'NAME': 'pyvoice-device-api',
         'CLIENT': {
-            'host': '127.0.0.1',
+                'host': '127.0.0.1',
         }
-	},
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -32,5 +32,5 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'PAGE_SIZE': 200,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    #'DATETIME_FORMAT': '%s000',
+    # 'DATETIME_FORMAT': '%s000',
 }
