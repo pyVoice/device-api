@@ -10,7 +10,7 @@ favicon_view = RedirectView.as_view(
     url='https://assets.pyvoice.tech/wordpress/cropped-android-chrome-512x512-1-32x32.png', permanent=True)
 
 router = routers.DefaultRouter()
-router.register(r'devices', DeviceViewSet)
+router.register(r'devices', DeviceViewSet, basename='device')
 
 urlpatterns = [
     # API Endpoints

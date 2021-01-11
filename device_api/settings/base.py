@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     # External packages
     'rest_framework',
     'rest_framework_api_key',
+    # 'django_extensions',
 
     # Custom apps
     'api',
