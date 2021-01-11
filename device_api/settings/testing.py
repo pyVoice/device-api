@@ -10,3 +10,7 @@ DATABASES = {
         'NAME': 'device-api-test'
     }
 }
+
+TEST_RUNNEER = ['django_nose.NoseTestSuiteRunner']
+
+NOSE_ARGS = ['--with-spec', '--spec-color']
