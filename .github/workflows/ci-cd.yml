@@ -33,7 +33,7 @@ jobs:
 
   # deploys to Heroku
   deploy:
-    name: Deploy the code on Heroku
+    name: Deploy on Heroku (production)
     needs: ['test']
     runs-on: ubuntu-latest
     steps:
@@ -49,7 +49,7 @@ jobs:
 
   # notify the build and deploy status
   notify:
-    name: Notify build and deploy status
+    name: Notify status
     needs: ['test', 'deploy']
     runs-on: ubuntu-latest
     steps:
