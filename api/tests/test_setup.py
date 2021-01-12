@@ -14,12 +14,12 @@ class TestSetUp(APITestCase):
         self.api_key, self.key = APIKey.objects.create_key(name='test-key')
 
         # data to create new Device
-        self.device_data = {
-            'device_id': str(uuid4()),
-            'operating_system': 'Test OS',
-            'location': 'Django',
-            'version': str(randint(0, 5))
-        }
+        # self.device_data = {
+        #     'device_id': str(uuid4()),
+        #     'operating_system': 'Test OS',
+        #     'location': 'Django',
+        #     'version': str(randint(0, 5))
+        # }
 
         return super().setUp()
 

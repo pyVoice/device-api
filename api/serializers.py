@@ -5,7 +5,7 @@ from .models import Device
 class DeviceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Device
-        fields = ['device_id', 'version', 'operating_system',
+        fields = ['id', 'device_id', 'version', 'operating_system',
                   'location', 'times']
 
     # def validate_device_id(self, value):
