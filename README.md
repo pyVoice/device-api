@@ -1,3 +1,5 @@
+![CI/CD Pipeline](https://github.com/pyVoice/device-api/workflows/CI/CD%20Pipeline/badge.svg)
+
 # Notes
 
 ## Deploy on Heroku
