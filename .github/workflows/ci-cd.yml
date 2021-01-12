@@ -47,7 +47,7 @@ jobs:
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
 
-  # notify the build and deploy status
+  # notify the build and deploy status using PushBullet
   notify:
     name: Notify status
     needs: ['test', 'deploy']
