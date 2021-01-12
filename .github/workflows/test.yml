@@ -27,6 +27,7 @@ jobs:
 
   # deploys to Heroku
   deploy:
+    needs: ['test']
     runs-on: ubuntu-latest
     steps:
       - name: Deploy code to Heroku
@@ -37,6 +38,7 @@ jobs:
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
 
   notify:
+    needs: ['test', 'deploy']
     runs-on: ubuntu-latest
     steps:
       - name: Notify build succeed
