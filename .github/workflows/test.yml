@@ -1,0 +1,30 @@
+name: Test the application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements/base.txt
+    - name: Run Django tests
+      run: |
+        python manage.py test api --settings=device_api.settings.testing -v 2
+    - name: Lint code
+      uses: wemake-services/wemake-python-styleguide@0.14.1
+        
