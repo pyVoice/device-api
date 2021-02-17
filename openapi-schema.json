@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "pyVoice Device API",
+    "title": "pyVoice API",
     "version": "",
     "description": "Device API for pyVoice"
   },
   "paths": {
-    "https://device-api.pyvoice.tech/devices/": {
+    "https://api.pyvoice.tech/devices/": {
       "get": {
         "operationId": "listDevices",
         "description": "API endpoints for Deviced related operations",
@@ -101,7 +101,7 @@
         ]
       }
     },
-    "https://device-api.pyvoice.tech/devices/{id}/": {
+    "https://api.pyvoice.tech/devices/{id}/": {
       "get": {
         "operationId": "retrieveDevice",
         "description": "API endpoints for Deviced related operations",
@@ -260,6 +260,10 @@
       "Device": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
           "device_id": {
             "type": "string",
             "description": "A unique ID to identify each device",
