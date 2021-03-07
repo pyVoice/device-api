@@ -15,8 +15,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES = {'default': dj_database_url.config(conn_max_age=500)}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
