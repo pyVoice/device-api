@@ -11,7 +11,7 @@ on:
 jobs:
   # checkout the code, install dependencies and test the application
   test:
-    name: Test the application
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
@@ -39,7 +39,7 @@ jobs:
 
   # notify the tests are OK using PushBullet
   notify:
-    name: Notify status
+    name: Notify
     needs: ['test']
     runs-on: ubuntu-latest
     steps:
