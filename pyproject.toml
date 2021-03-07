@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "device-api"
+version = "0.1.0"
+description = "Device API for pyVoice"
+authors = ["Afonso Santos <afonso.faisca1@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.1.7"
+djangorestframework = "^3.12.2"
+djangorestframework-api-key = "^2.0.0"
+gunicorn = "^20.0.4"
+whitenoise = "^5.2.0"
+psycopg2 = "^2.8.6"
+dj-database-url = "^0.5.0"
+python-environ = "^0.4.54"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+autopep8 = "^1.5.5"
+pre-commit = "^2.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

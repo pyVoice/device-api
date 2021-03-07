@@ -1,4 +1,0 @@
-gunicorn
-dnspython
-whitenoise
-django-storages[azure]

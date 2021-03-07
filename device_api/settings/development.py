@@ -15,11 +15,8 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'pyvoice-device-api',
-        'CLIENT': {
-                'host': '127.0.0.1',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite'
     },
 }
 
