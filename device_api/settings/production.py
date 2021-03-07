@@ -60,11 +60,7 @@ STATIC_URL = '/assets/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 sentry_sdk.init(
-    dsn="https://b81a65d9c5f94adfb94ad01e47d9286f@o474195.ingest.sentry.io/5510129",
+    dsn="https://88ae5f772ae945889d5fa9f93ed9cdbf@o520978.ingest.sentry.io/5665502",
     integrations=[DjangoIntegration()],
-    traces_sample_rate=1.0,
-
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
+    traces_sample_rate=1.0
 )
