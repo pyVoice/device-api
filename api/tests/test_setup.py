@@ -6,10 +6,10 @@ from rest_framework_api_key.models import APIKey
 class TestSetUp(APITestCase):
     def setUp(self) -> None:
         # the API url to query
-        self.api_url = reverse('device-list')
+        self.api_url = reverse("device-list")
 
         # API key to use in testing
-        self.api_key, self.key = APIKey.objects.create_key(name='test-key')
+        self.api_key, self.key = APIKey.objects.create_key(name="test-key")
 
         return super().setUp()
 

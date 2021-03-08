@@ -7,17 +7,23 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Device',
+            name="Device",
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
-                ('version', models.CharField(max_length=10)),
-                ('registered_at', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("version", models.CharField(max_length=10)),
+                ("registered_at", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

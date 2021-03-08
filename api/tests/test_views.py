@@ -1,6 +1,6 @@
 import json
-from uuid import uuid4
 from random import randint
+from uuid import uuid4
 
 from .test_setup import TestSetUp
 
@@ -14,7 +14,7 @@ class TestViews(TestSetUp):
         """ Test if a Device cannot be registered without providing any data """
 
         # configure Authorization header
-        self.client.credentials(HTTP_AUTHORIZATION='Api-Key ' + self.key)
+        self.client.credentials(HTTP_AUTHORIZATION="Api-Key " + self.key)
 
         # make the API request
         response = self.client.post(self.api_url)
@@ -29,7 +29,7 @@ class TestViews(TestSetUp):
             "device_id": str(uuid4()),
             "operating_system": "Test OS",
             "location": "Django",
-            "version": str(randint(0, 5))
+            "version": str(randint(0, 5)),
         }
 
         # send the empty Authorization header
@@ -48,17 +48,18 @@ class TestViews(TestSetUp):
             "device_id": str(uuid4()),
             "operating_system": "Test OS",
             "location": "Django",
-            "version": str(randint(0, 5))
+            "version": str(randint(0, 5)),
         }
 
         self.device_data = json.dumps(self.device_data)
 
         # configure Authorization header
-        self.client.credentials(HTTP_AUTHORIZATION='Api-Key ' + self.key)
+        self.client.credentials(HTTP_AUTHORIZATION="Api-Key " + self.key)
 
         # make the API request
         self.response = self.client.post(
-            self.api_url, self.device_data, content_type='application/json')
+            self.api_url, self.device_data, content_type="application/json"
+        )
 
         # expecting 201 - Resource Created
         self.assertEqual(self.response.status_code, 201)
