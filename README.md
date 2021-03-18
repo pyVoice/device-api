@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/xURT3C6.png" width="70%" />
+<img src="https://i.imgur.com/xURT3C6.png" width="50%" />
 </p>
 <p align="center">Assistente pessoal, controlado por voz</p>
 <br>
@@ -18,14 +18,16 @@
 
 ## Sobre
 
-Este repositório contém o site de apresentação do projeto, desenvolvido com a *framework* [Hugo](https://gohugo.io/) e alojado na plataforma [Netlify](https://www.netlify.com/). O site usa o tema Hugo Cupper, disponível no [seu repositório](https://github.com/zwbetz-gh/cupper-hugo-theme).
+Este repositório contém a *API* responsável por agregar as instalações da aplicação, e alguns dados relativos a estas.
 
 Pode visitar o site em [https://pap.pyvoice.tech](https://pap.pyvoice.tech).
 
 ## Funcionamento Geral
 
+O diagrama abaixo representa a forma de funcionamento da *API*, de forma simplificada.
+
 <p align="center">
-    <img src="https://i.imgur.com/nn7xiEF.png">
+    <img src="https://i.imgur.com/SyjLKJ5.png">
 </p>
 
 ## Contribuir
@@ -41,6 +43,22 @@ O projeto teve o apoio das seguintes entidades:
 - [Escola Secundária Dr. Augusto César da Silva Ferreira](https://www.esdacsf.pt) pelo corpo docente e equipamentos, que muito ajudou no decorrer da realização do projeto
 - [GitHub Student Developer Pack](https://education.github.com/pack) por fornecer ferramentas que apoiaram o desenvolvimento do projeto
 - [.TECH Domains](http://get.tech/) por forncer o domínio para o projeto
+
+## Disclaimer
+
+A obtenção, tratamento e divulgação de dados respeita os seguintes pontos:
+
+- Os dados recolhidos são:
+    - **`id`**: identificador único e aleatório, para identificar o dispositivo/instalação
+    - **`operating_system`**: nome e versão do sistema operativo
+    - **`location`**: localização obtida através do endereço IP do cliente, usando o serviço [IPinfo](https://ipinfo.io/)
+    - **`version`**: versão da aplicação instalada
+- Os dados apenas são usados para fins estatísticos.
+- Os dados não são fornecidos a terceiros.
+- O acesso aos dados é privado, e apenas disponível para membros da equipa.
+- Os dados não sofrem processos de análise, ou qualquer transformação.
+- O utilizador pode escolher fornecer ou não fornecer estes dados, de acordo com a sua preferência.
+- O utilizador pode sempre contactar a equipa do projeto, a fim de remover os seus dados da base de dados (requer que o utilizador tenha conhecimento do seu `id`)
 
 ## Licença
 
