@@ -15,14 +15,6 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite"},
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'pyvoice-api',
-    #     'USER': env('PGSQL_USER'),
-    #     'PASSWORD': env('PGSQL_PASSWORD'),
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

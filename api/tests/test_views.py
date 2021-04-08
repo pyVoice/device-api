@@ -13,9 +13,6 @@ class TestViews(TestSetUp):
     def test_cannot_register_device_without_data(self):
         """ Test if a Device cannot be registered without providing any data """
 
-        # configure Authorization header
-        self.client.credentials(HTTP_AUTHORIZATION="Api-Key " + self.key)
-
         # make the API request
         response = self.client.post(self.api_url)
 
@@ -31,9 +28,6 @@ class TestViews(TestSetUp):
             "location": "Django",
             "version": str(randint(0, 5)),
         }
-
-        # send the empty Authorization header
-        self.client.credentials()
 
         # make the API request
         response = self.client.post(self.api_url)
@@ -52,9 +46,6 @@ class TestViews(TestSetUp):
         }
 
         self.device_data = json.dumps(self.device_data)
-
-        # configure Authorization header
-        self.client.credentials(HTTP_AUTHORIZATION="Api-Key " + self.key)
 
         # make the API request
         self.response = self.client.post(

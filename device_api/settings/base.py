@@ -11,7 +11,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # External packages
     "rest_framework",
-    "rest_framework_api_key",
     # 'django_extensions',
     # Custom apps
     "api",

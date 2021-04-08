@@ -1,6 +1,4 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
-from rest_framework_api_key.permissions import HasAPIKey
 
 from api.models import Device
 
@@ -14,4 +12,3 @@ class DeviceViewSet(viewsets.ModelViewSet):
 
     queryset = Device.objects.all().order_by("-registered_at")
     serializer_class = DeviceSerializer
-    permission_classes = [HasAPIKey | IsAuthenticated]
